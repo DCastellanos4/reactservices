@@ -1,4 +1,4 @@
 var Global = {
-  urlApiSupp: "https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers",
+  baseURL: "https://services.odata.org/V4/Northwind/Northwind.svc/",
 };
 export default Global;

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Global from "../Global";
 export default class ComponentServiceSuppliers extends Component {
   state = {
     supp: [],
     buscado: null,
   };
   numero = React.createRef();
-  url = "https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers";
+  url = Global.baseURL + "Suppliers";
   cargar = () => {
     axios.get(this.url).then((response) => {
       this.setState({

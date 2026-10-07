@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Global from "../Global";
 export default class ComponentServiceCustomer extends Component {
   state = {
     customers: [],
   };
-  url = "https://services.odata.org/V4/Northwind/Northwind.svc/Customers";
+  url = Global.baseURL + "Customers";
   loadCustomers = () => {
     console.log("Antes del servicio");
     axios.get(this.url).then((response) => {
