@@ -20,6 +20,11 @@ export default class CollatzComponent extends Component {
       lista: aux,
     });
   };
+  componentDidUpdate = (oldProps) => {
+    if (oldProps.numero != this.props.numero) {
+      this.generarCollatz();
+    }
+  };
   componentDidMount = () => {
     this.generarCollatz();
   };
@@ -30,7 +35,11 @@ export default class CollatzComponent extends Component {
         <h2>NUMERO: {this.props.numero}</h2>
         <ul className="list-group">
           {this.state.lista.map((index, key) => {
-            return <li className="list-group-item" key={key}>{index}</li>;
+            return (
+              <li className="list-group-item" key={key}>
+                {index}
+              </li>
+            );
           })}
         </ul>
       </div>

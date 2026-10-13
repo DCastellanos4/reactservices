@@ -15,6 +15,11 @@ export default class TablaMultiplicar extends Component {
       tabla: aux,
     });
   };
+  componentDidUpdate = (oldProps) => {
+    if (oldProps.numero != this.props.numero) {
+      this.generarCollatz();
+    }
+  };
   componentDidMount = () => {
     this.generarTabla();
   };
@@ -25,7 +30,11 @@ export default class TablaMultiplicar extends Component {
         <h3 style={{ color: "purple" }}>Numero: {this.props.numero}</h3>
         <ul className="list-group">
           {this.state.tabla.map((index, key) => {
-            return <li className="list-group-item"key={key}>{index}</li>;
+            return (
+              <li className="list-group-item" key={key}>
+                {index}
+              </li>
+            );
           })}
         </ul>
       </div>
