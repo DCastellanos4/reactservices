@@ -12,6 +12,7 @@ export default class ComponentServiceJobs extends Component {
   handOffice = () => {
     axios.get(this.url + "/api/empleados").then((response) => {
       this.setState({ empleados: response.data });
+      //Objeto SET que es una coleccion que no admite repetidos en su interior
       let todosoficios = response.data.map((emp) => emp.oficio);
       this.setState({
         oficios: Array.from(new Set(todosoficios)),
@@ -44,17 +45,26 @@ export default class ComponentServiceJobs extends Component {
           </select>
           <button>Buscar</button>
         </form>
-        {this.state.empleadosBuscados.map((index, key) => {
-          return (
-            <h4 key={key}>
-              NOMBRE: {index.apellido}
-              <br></br>
-              OFICIO: {index.oficio}
-              <br></br>
-              SALARIO: {index.salario}
-            </h4>
-          );
-        })}
+        <table>
+          <thead>
+            <tr>
+              <th>NOMBRE</th>
+              <th>OFICIO</th>
+              <th>SALARIO</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.empleadosBuscados.map((empleado, index) => {
+              return (
+                <tr key={index}>
+                  <td>{empleado.apellido}</td>
+                  <td>{empleado.oficio}</td>
+                  <td>{empleado.salario}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
