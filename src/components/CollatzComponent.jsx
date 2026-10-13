@@ -28,9 +28,9 @@ export default class CollatzComponent extends Component {
       <div>
         <h2>Conjetura de collatz</h2>
         <h2>NUMERO: {this.props.numero}</h2>
-        <ul>
+        <ul className="list-group">
           {this.state.lista.map((index, key) => {
-            return <li key={key}>{index}</li>;
+            return <li className="list-group-item" key={key}>{index}</li>;
           })}
         </ul>
       </div>

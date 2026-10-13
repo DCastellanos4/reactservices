@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import TablaMultiplicar from "./TablaMultiplicar";
 import HomeComponent from "./HomeComponent";
 import NotFound from "./NotFound";
 import { useParams } from "react-router-dom";
 import CollatzComponent from "./CollatzComponent";
+import MenuComponent from "./MenuComponent";
 export default class Router extends Component {
   render() {
     function TablaMultiplicarElement() {
@@ -19,6 +20,7 @@ export default class Router extends Component {
     }
     return (
       <BrowserRouter>
+        <MenuComponent />
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/tabla/:num" element={<TablaMultiplicarElement />} />

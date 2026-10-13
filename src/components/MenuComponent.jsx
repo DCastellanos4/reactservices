@@ -1,30 +1,30 @@
 import React, { Component } from "react";
-
+import { NavLink } from "react-router-dom";
 export default class MenuComponent extends Component {
   render() {
     return (
       <div>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="/tabla/21">Tabla de multiplicar</a>
+            <NavLink to="/tabla/21">tabla de multiplicar 21</NavLink>
           </li>
           <li>
-            <a href="/tabla/12">Tabla de multiplicar</a>
+            <NavLink to="/tabla/12">Tabla de multiplicar</NavLink>
           </li>
           <li>
-            <a href="/tabla/25">Tabla de multiplicar</a>
+            <NavLink to="/tabla/25">Tabla de multiplicar</NavLink>
           </li>
           <li>
-            <a href="/collatz/12">Collatz</a>
+            <NavLink to="/collatz/12">Collatz</NavLink>
           </li>
           <li>
-            <a href="/collatz/25">Collatz</a>
+            <NavLink to="/collatz/25">Collatz</NavLink>
           </li>
           <li>
-            <a href="/collatz/1216731723">Collatz</a>
+            <NavLink to="/collatz/1216731723">Collatz</NavLink>
           </li>
         </ul>
       </div>

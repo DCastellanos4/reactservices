@@ -12,6 +12,13 @@ import reportWebVitals from "./reportWebVitals";
 import HomeComponent from "./components/HomeComponent";
 import MenuComponent from "./components/MenuComponent";
 import Router from "./components/Router";
+
+//npm install bootstrap jquery popper.js react-router-dom axios
+import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import Popper from "popper.js";
+import "bootstrap/dist/js/bootstrap.bundle";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div
@@ -22,7 +29,6 @@ root.render(
       padding: "10px",
     }}
   >
-    <MenuComponent />
     <Router />
   </div>,
 );

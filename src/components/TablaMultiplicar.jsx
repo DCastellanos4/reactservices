@@ -23,9 +23,9 @@ export default class TablaMultiplicar extends Component {
       <div>
         <h1>Tabla de multiplicar Routing</h1>
         <h3 style={{ color: "purple" }}>Numero: {this.props.numero}</h3>
-        <ul>
+        <ul className="list-group">
           {this.state.tabla.map((index, key) => {
-            return <li key={key}>{index}</li>;
+            return <li className="list-group-item"key={key}>{index}</li>;
           })}
         </ul>
       </div>
