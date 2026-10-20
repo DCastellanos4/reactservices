@@ -28,7 +28,7 @@ root.render(
       width: "50%",
       padding: "10px",
     }}
-  >
+  > 
     <Router />
   </div>,
 );
